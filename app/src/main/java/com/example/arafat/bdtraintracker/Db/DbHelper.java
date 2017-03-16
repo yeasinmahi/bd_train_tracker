@@ -13,7 +13,8 @@ import java.util.ArrayList;
 
 public class DbHelper extends SQLiteOpenHelper {
 
-	public DbHelper(Context context) {
+
+	private DbHelper(Context context) {
 		super(context, Utility.DbName, null, Utility.DbVersion);
 		// TODO Auto-generated constructor stub
 	}
@@ -22,14 +23,20 @@ public class DbHelper extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 
 	}
-
+	private static DbHelper instance;
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// TODO Auto-generated method stub
 
 	}
 
-	public ArrayList<Train> getAllTrain() {
+	public static DbHelper getInstance(Context context){
+		if(instance==null){
+			instance= new DbHelper(context);
+		}
+		return instance;
+	}
+	 public ArrayList<Train> getAllTrain() {
 		ArrayList<Train> trains = new ArrayList<Train>();
 		// Rest Index Of Spinner from database
 		SQLiteDatabase db = getReadableDatabase();

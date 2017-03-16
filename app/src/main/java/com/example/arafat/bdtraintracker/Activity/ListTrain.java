@@ -41,8 +41,7 @@ public class ListTrain extends ListActivity{
     }
 
     private void populateList() {
-        DbHelper dbHelper = new DbHelper(getApplicationContext());
-        Utility.setTrains(dbHelper.getAllTrain());
+        Utility.setTrains(DbHelper.getInstance(getApplicationContext()).getAllTrain());
         list.clear();
         for (Train train : Utility.getTrains()) {
             HashMap<String, String> temp = new HashMap<String, String>();

@@ -58,31 +58,28 @@ public class mySimpleAdapter extends SimpleAdapter  {
         }
 
         final int id = Integer.parseInt((String) data.get(position).get("id"));
-        final DbHelper dbHelper = new DbHelper(context);
-
+        final Train train = DbHelper.getInstance(context).getTrainById(id);
 
         //button implementation
         Button sentSmsButton=(Button)rowView.findViewById(R.id.sentSmsButton);
-        Button.OnClickListener mOkOnClickListener = new Button.OnClickListener()
-        {
-            public void onClick(View v) {
-                Log.v("ttttttt", ""+showTv[0].getText());
-                final Train train = dbHelper.getTrainById(id);
-                Toast.makeText(context,train.getName(), Toast.LENGTH_LONG).show();
-            }
-        };
-        sentSmsButton.setOnClickListener(mOkOnClickListener);
+        Button viewDetailsButton=(Button)rowView.findViewById(R.id.viewDetailsButton);
 
-        Button btn2=(Button)rowView.findViewById(R.id.viewDetailsButton);
-        Button.OnClickListener mOkOnClickListener2 = new Button.OnClickListener()
-        {
-            public void onClick(View v) {
-                Log.v("hhhhhhh", ""+showTv[0].getText());
-                Toast.makeText(context,"abc"+showTv[0].getText(), Toast.LENGTH_LONG).show();
-            }
-        };
-        btn2.setOnClickListener(mOkOnClickListener2);
+        sentSmsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+                public void onClick(View v) {
 
+                    Toast.makeText(context,train.getName(), Toast.LENGTH_LONG).show();
+                }
+
+        });
+
+
+        viewDetailsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context,train.getOffday(), Toast.LENGTH_LONG).show();
+            }
+        });
         return rowView;
     }
 }
