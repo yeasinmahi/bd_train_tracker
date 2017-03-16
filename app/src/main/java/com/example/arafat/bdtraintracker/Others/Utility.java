@@ -1,10 +1,13 @@
 package com.example.arafat.bdtraintracker.Others;
 
+import android.text.StaticLayout;
 import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+
+import com.example.arafat.bdtraintracker.Model.Train;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -89,6 +92,17 @@ public class Utility {
             }
         }
     }
+
+    public static ArrayList<Train> getTrains() {
+        return trains;
+    }
+
+    public static void setTrains(ArrayList<Train> trains) {
+        Utility.trains = trains;
+    }
+
+    private static ArrayList<Train> trains=null;
+
 
 }
 

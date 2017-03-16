@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ListTrain extends ListActivity{
-    private static final ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
+    private  ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
     private ImageView statsuImage;
     private Button sentSmsButton,viewDetailsButton;
     @Override
@@ -42,9 +42,9 @@ public class ListTrain extends ListActivity{
 
     private void populateList() {
         DbHelper dbHelper = new DbHelper(getApplicationContext());
-        ArrayList<Train> trains = dbHelper.getAllTrain();
+        Utility.setTrains(dbHelper.getAllTrain());
         list.clear();
-        for (Train train : trains) {
+        for (Train train : Utility.getTrains()) {
             HashMap<String, String> temp = new HashMap<String, String>();
             temp.put("id", String.valueOf(train.getId()));
             temp.put("name", train.getName());

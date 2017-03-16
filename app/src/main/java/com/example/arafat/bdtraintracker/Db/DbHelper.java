@@ -54,7 +54,28 @@ public class DbHelper extends SQLiteOpenHelper {
 		db.close();
 		return trains;
 	}
-
+	public Train getTrainById(int id) {
+		Train train = new Train();
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor cursor = db.rawQuery("select * from train where id = "+id, null);
+		if (cursor != null && cursor.getCount() > 0) {
+			while (cursor.moveToNext()) {
+				train.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex("id"))));
+				train.setCode(cursor.getString(cursor.getColumnIndex("code")));
+				train.setName(cursor.getString(cursor.getColumnIndex("name")));
+				train.setOffday(cursor.getString(cursor.getColumnIndex("offDay")));
+				train.setFrom(cursor.getString(cursor.getColumnIndex("from")));
+				train.setFromTime(Utility.getDate(cursor.getString(cursor.getColumnIndex("fromTime")), Utility.myDateFormat.HH_MM));
+				train.setTo(cursor.getString(cursor.getColumnIndex("to")));
+				train.setToTime(Utility.getDate(cursor.getString(cursor.getColumnIndex("toTime")), Utility.myDateFormat.HH_MM));
+			}
+		}
+		if (cursor != null) {
+			cursor.close();
+		}
+		db.close();
+		return train;
+	}
 	public ArrayList<Train> loadTrainBySearch(String sql) {
 		ArrayList<Train> trains = new ArrayList<Train>();
 		
@@ -65,11 +86,12 @@ public class DbHelper extends SQLiteOpenHelper {
 				Train train = new Train();
 				train.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex("id"))));
 				train.setCode(cursor.getString(cursor.getColumnIndex("code")));
+				train.setName(cursor.getString(cursor.getColumnIndex("name")));
 				train.setOffday(cursor.getString(cursor.getColumnIndex("offDay")));
 				train.setFrom(cursor.getString(cursor.getColumnIndex("from")));
-				train.setFromTime(Time.valueOf(cursor.getString(cursor.getColumnIndex("fromTime"))));
+				train.setFromTime(Utility.getDate(cursor.getString(cursor.getColumnIndex("fromTime")), Utility.myDateFormat.HH_MM));
 				train.setTo(cursor.getString(cursor.getColumnIndex("to")));
-				train.setToTime(Time.valueOf(cursor.getString(cursor.getColumnIndex("toTime"))));
+				train.setToTime(Utility.getDate(cursor.getString(cursor.getColumnIndex("toTime")), Utility.myDateFormat.HH_MM));
 				trains.add(train);
 			}
 		}

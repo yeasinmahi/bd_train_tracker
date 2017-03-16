@@ -11,13 +11,19 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.arafat.bdtraintracker.Db.DbHelper;
+import com.example.arafat.bdtraintracker.Model.Train;
 import com.example.arafat.bdtraintracker.R;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import static android.R.attr.data;
 import static android.R.attr.resource;
+import static android.R.attr.x;
+import static com.example.arafat.bdtraintracker.Others.Utility.getTrains;
 
 /**
  * Created by Arafat on 16/03/2017.
@@ -41,24 +47,28 @@ public class mySimpleAdapter extends SimpleAdapter  {
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
-
+        //make view here
         LayoutInflater inflater = ((Activity)context).getLayoutInflater();
         View rowView = inflater.inflate(resource, null, true);
         Map<String, Object> medMap=data.get(position);
-        final String id = (String) data.get(position).get("id");
         final TextView[] showTv=new TextView[from.length];
-
         for (int i = 0; i < from.length; i++) {
             showTv[i]=(TextView)rowView.findViewById(to[i]);
             showTv[i].setText(""+medMap.get(from[i]));
         }
+
+        final int id = Integer.parseInt((String) data.get(position).get("id"));
+        final DbHelper dbHelper = new DbHelper(context);
+
+
+        //button implementation
         Button sentSmsButton=(Button)rowView.findViewById(R.id.sentSmsButton);
         Button.OnClickListener mOkOnClickListener = new Button.OnClickListener()
         {
             public void onClick(View v) {
                 Log.v("ttttttt", ""+showTv[0].getText());
-                Toast.makeText(context,""+id, Toast.LENGTH_LONG).show();
+                final Train train = dbHelper.getTrainById(id);
+                Toast.makeText(context,train.getName(), Toast.LENGTH_LONG).show();
             }
         };
         sentSmsButton.setOnClickListener(mOkOnClickListener);
@@ -72,6 +82,7 @@ public class mySimpleAdapter extends SimpleAdapter  {
             }
         };
         btn2.setOnClickListener(mOkOnClickListener2);
+
         return rowView;
     }
 }
