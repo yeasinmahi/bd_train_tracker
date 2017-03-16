@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">BD Train Tracker</string>
+    <string name="welcome">Welcome to\r\nBD Train Tracker</string>
+    <string name="tap">tap to start</string>
+    <string name="_data_data_">/data/data/</string>
+</resources>
