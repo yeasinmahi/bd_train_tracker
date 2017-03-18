@@ -1,13 +1,20 @@
 package com.example.arafat.bdtraintracker.Others;
 
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.text.StaticLayout;
 import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
+import com.example.arafat.bdtraintracker.Db.DbHelper;
 import com.example.arafat.bdtraintracker.Model.Train;
+import com.example.arafat.bdtraintracker.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -102,6 +109,38 @@ public class Utility {
     }
 
     private static ArrayList<Train> trains=null;
+
+    public static void popUpWindow(final Context context, final Train train) {
+        final Dialog dialog = new Dialog(context,R.style.MyTheme);
+        dialog.setContentView(R.layout.custom_dialog_train_info);
+
+        final TextView trainName = (TextView) dialog.findViewById(R.id.trainNameTextView);
+        final TextView trainCode = (TextView) dialog.findViewById(R.id.trainCodeTextView);
+        final TextView from = (TextView) dialog.findViewById(R.id.fromTextView);
+        final TextView to = (TextView) dialog.findViewById(R.id.toTextView);
+        final TextView fromTime = (TextView) dialog.findViewById(R.id.fromTimeTextView);
+        final TextView toTime = (TextView) dialog.findViewById(R.id.toTimeTextView);
+        final TextView offDay = (TextView) dialog.findViewById(R.id.offDayTextView);
+        Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dialog.dismiss();
+            }
+        });
+        trainName.setText(train.getName());
+        trainCode.setText("("+train.getCode()+")");
+        from.setText(train.getFrom());
+        to.setText(train.getTo());
+        fromTime.setText(Utility.getDateAsString(train.getFromTime(),myDateFormat.hh_mm_m));
+        toTime.setText(Utility.getDateAsString(train.getToTime(),myDateFormat.hh_mm_m));
+        offDay.setText("Off Day: "+train.getOffday());
+        trainName.setText(train.getName());
+        dialog.show();
+
+    }
 
 
 }

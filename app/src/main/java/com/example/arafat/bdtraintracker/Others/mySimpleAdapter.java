@@ -68,10 +68,10 @@ public class mySimpleAdapter extends SimpleAdapter {
         viewDetailsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, train.getOffday(), Toast.LENGTH_LONG).show();
+                Utility.popUpWindow(context,train);
+                //Toast.makeText(context, train.getOffday(), Toast.LENGTH_LONG).show();
             }
         });
         return rowView;
     }
 }
-
