@@ -15,8 +15,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.arafat.bdtraintracker.Others.MyActivity;
-import com.example.arafat.bdtraintracker.Others.MyInterface;
-import com.example.arafat.bdtraintracker.Others.SmsReceiver;
 import com.example.arafat.bdtraintracker.Others.Utility;
 import com.example.arafat.bdtraintracker.R;
 
@@ -32,12 +30,7 @@ public class SentSms extends MyActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sent_sms);
         Init();
-        SmsReceiver.bindListener(new MyInterface.SmsListener() {
-            @Override
-            public void messageReceived(String messageText) {
-                Utility.popUpReceiveSms(SentSms.this,messageText);
-            }
-        });
+
         //ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.SEND_SMS},1);
     }
 

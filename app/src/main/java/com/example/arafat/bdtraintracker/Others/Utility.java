@@ -16,6 +16,7 @@ import com.example.arafat.bdtraintracker.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.sql.Time;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -48,7 +49,8 @@ public class Utility {
         yyyy_MM_dd("yyyy-MM-dd"),
         MMM_yyyy("MMM-yyyy"),
         HH_MM("HH:MM"),
-        hh_mm_m("hh:mm a");
+        hh_mm_m("hh:mm a"),
+        MMM_dd_h_mm_m("MMM dd, h:mm a");
 
         private final String text;
 
@@ -146,7 +148,11 @@ public class Utility {
         final Dialog dialog = new Dialog(context,R.style.MyTheme);
         dialog.setContentView(R.layout.custom_dialog_receive_sms);
         final TextView messageTextView = (TextView) dialog.findViewById(R.id.messageTextView);
+        final TextView smsTimeTextView = (TextView) dialog.findViewById(R.id.smsTimeTextView);
+        Date time = new Date();
+        smsTimeTextView.setText(getDateAsString(time,myDateFormat.MMM_dd_h_mm_m));
         messageTextView.setText(message);
+
         Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override

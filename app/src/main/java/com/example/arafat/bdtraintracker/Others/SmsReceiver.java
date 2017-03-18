@@ -13,7 +13,6 @@ import android.telephony.SmsMessage;;import com.example.arafat.bdtraintracker.Ac
 
 public class SmsReceiver extends BroadcastReceiver{
     private String TAG = SmsReceiver.class.getSimpleName();
-    public static MyInterface.SmsListener listener;
     public SmsReceiver() {
     }
 
@@ -30,32 +29,25 @@ public class SmsReceiver extends BroadcastReceiver{
             // Retrieve the SMS Messages received
             Object[] pdus = (Object[]) bundle.get("pdus");
             msgs = new SmsMessage[pdus.length];
-
+            String sender = null;
             // For every SMS message received
             for (int i=0; i < msgs.length; i++) {
                 // Convert Object array
                 msgs[i] = SmsMessage.createFromPdu((byte[]) pdus[i]);
                 // Sender's phone number
-                str += "SMS from " + msgs[i].getOriginatingAddress() + " : ";
+                sender = msgs[i].getOriginatingAddress();
                 // Fetch the text message
                 str += msgs[i].getMessageBody().toString();
                 // Newline <img draggable="false" class="emoji" alt="🙂" src="https://s.w.org/images/core/emoji/72x72/1f642.png">
                 str += "\n";
             }
-            abortBroadcast();
-            Context context1 = ((MyApplication)context.getApplicationContext()).getContext();
-            Utility.popUpReceiveSms(context1,str);
-            //Log.d(TAG, str);
-            if (listener!=null){
-                //listener.messageReceived(str);
+            if (sender.equals("2888")) {
+                abortBroadcast();
+                Context context1 = ((MyApplication)context.getApplicationContext()).getContext();
+                Utility.popUpReceiveSms(context1,str);
             }
 
-            // Display the entire SMS Message
-            //Utility.popUpReceiveSms(context.getApplicationContext(),str);
-        }
-    }
 
-    public static void bindListener(MyInterface.SmsListener l) {
-        listener = l;
+        }
     }
 }
