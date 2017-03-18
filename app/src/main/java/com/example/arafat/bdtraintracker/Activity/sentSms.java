@@ -14,12 +14,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.arafat.bdtraintracker.Others.MyActivity;
 import com.example.arafat.bdtraintracker.Others.MyInterface;
 import com.example.arafat.bdtraintracker.Others.SmsReceiver;
 import com.example.arafat.bdtraintracker.Others.Utility;
 import com.example.arafat.bdtraintracker.R;
 
-public class SentSms extends Activity{
+public class SentSms extends MyActivity {
     public static final String ACTION_SMS_SENT = "com.example.android.apis.os.SMS_SENT_ACTION";
     EditText recipientTextEdit = null;
     EditText contentTextEdit =null;
@@ -27,7 +28,7 @@ public class SentSms extends Activity{
     String trainCode;
     BroadcastReceiver broadcastReceiver;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sent_sms);
         Init();

@@ -1,5 +1,6 @@
 package com.example.arafat.bdtraintracker.Others;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.view.View;
@@ -153,7 +154,13 @@ public class Utility {
                 dialog.dismiss();
             }
         });
-        dialog.show();
+        Activity currentActivity = ((MyApplication)context.getApplicationContext()).getCurrentActivity();
+
+        if(!((Activity) context).isFinishing())
+        {
+            dialog.show();
+        }
+
     }
 }
 

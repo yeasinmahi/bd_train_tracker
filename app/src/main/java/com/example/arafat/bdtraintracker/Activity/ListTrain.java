@@ -9,6 +9,8 @@ import com.example.arafat.bdtraintracker.Db.DbHelper;
 import com.example.arafat.bdtraintracker.Db.PopulatedOpenHelper;
 import com.example.arafat.bdtraintracker.Model.Train;
 import com.example.arafat.bdtraintracker.Others.MyInterface;
+import com.example.arafat.bdtraintracker.Others.MyListActivity;
+import com.example.arafat.bdtraintracker.Others.SmsReceiver;
 import com.example.arafat.bdtraintracker.Others.Utility;
 import com.example.arafat.bdtraintracker.Others.MySimpleAdapter;
 import com.example.arafat.bdtraintracker.R;
@@ -16,16 +18,22 @@ import com.example.arafat.bdtraintracker.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ListTrain extends ListActivity{
+public class ListTrain extends MyListActivity{
     private  ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
     private ImageView statsuImage;
     private Button sentSmsButton,viewDetailsButton;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         PopulatedOpenHelper.getInstance(getApplicationContext());
         setContentView(R.layout.activity_list_train);
         Init();
+        SmsReceiver.bindListener(new MyInterface.SmsListener() {
+            @Override
+            public void messageReceived(String messageText) {
+                Utility.popUpReceiveSms(ListTrain.this,messageText);
+            }
+        });
         MySimpleAdapter adapter = new MySimpleAdapter(this, list, R.layout.custom_row_view, new String[] { "name", "place","time"}, new int[] { R.id.nameTextView, R.id.locationTextView,R.id.timeTextView});
         populateList();
         setListAdapter(adapter);

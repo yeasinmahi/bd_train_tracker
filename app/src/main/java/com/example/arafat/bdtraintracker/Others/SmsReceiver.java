@@ -1,5 +1,6 @@
 package com.example.arafat.bdtraintracker.Others;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -42,9 +43,11 @@ public class SmsReceiver extends BroadcastReceiver{
                 str += "\n";
             }
             abortBroadcast();
+            Context context1 = ((MyApplication)context.getApplicationContext()).getContext();
+            Utility.popUpReceiveSms(context1,str);
             //Log.d(TAG, str);
             if (listener!=null){
-                listener.messageReceived(str);
+                //listener.messageReceived(str);
             }
 
             // Display the entire SMS Message
