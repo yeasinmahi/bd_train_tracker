@@ -2,17 +2,13 @@ package com.example.arafat.bdtraintracker.Others;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.text.StaticLayout;
-import android.text.format.Time;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.arafat.bdtraintracker.Db.DbHelper;
+import com.example.arafat.bdtraintracker.Activity.MainActivity;
 import com.example.arafat.bdtraintracker.Model.Train;
 import com.example.arafat.bdtraintracker.R;
 
@@ -34,6 +30,10 @@ import java.util.Random;
 public class Utility {
     public static final String DbName = "btt.db";
     public static int DbVersion = 1;
+    public static String receipentNumber = "16318";
+    public static String getSmsBody(String code){
+        return "TR "+code;
+    }
     public static Date ErrorDate = new Date();
     static {
         try {
@@ -110,7 +110,7 @@ public class Utility {
 
     private static ArrayList<Train> trains=null;
 
-    public static void popUpWindow(final Context context, final Train train) {
+    public static void popUpTrainInfo(final Context context, final Train train) {
         final Dialog dialog = new Dialog(context,R.style.MyTheme);
         dialog.setContentView(R.layout.custom_dialog_train_info);
 
@@ -141,7 +141,19 @@ public class Utility {
         dialog.show();
 
     }
-
-
+    public static void popUpReceiveSms(final Context context,final String message) {
+        final Dialog dialog = new Dialog(context,R.style.MyTheme);
+        dialog.setContentView(R.layout.custom_dialog_receive_sms);
+        final TextView messageTextView = (TextView) dialog.findViewById(R.id.messageTextView);
+        messageTextView.setText(message);
+        Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
+    }
 }
 

@@ -2,17 +2,15 @@ package com.example.arafat.bdtraintracker.Activity;
 
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import com.example.arafat.bdtraintracker.Db.DbHelper;
 import com.example.arafat.bdtraintracker.Db.PopulatedOpenHelper;
 import com.example.arafat.bdtraintracker.Model.Train;
+import com.example.arafat.bdtraintracker.Others.MyInterface;
 import com.example.arafat.bdtraintracker.Others.Utility;
-import com.example.arafat.bdtraintracker.Others.mySimpleAdapter;
+import com.example.arafat.bdtraintracker.Others.MySimpleAdapter;
 import com.example.arafat.bdtraintracker.R;
 
 import java.util.ArrayList;
@@ -28,7 +26,7 @@ public class ListTrain extends ListActivity{
         PopulatedOpenHelper.getInstance(getApplicationContext());
         setContentView(R.layout.activity_list_train);
         Init();
-        mySimpleAdapter adapter = new mySimpleAdapter(this, list, R.layout.custom_row_view, new String[] { "name", "place","time"}, new int[] { R.id.nameTextView, R.id.locationTextView,R.id.timeTextView});
+        MySimpleAdapter adapter = new MySimpleAdapter(this, list, R.layout.custom_row_view, new String[] { "name", "place","time"}, new int[] { R.id.nameTextView, R.id.locationTextView,R.id.timeTextView});
         populateList();
         setListAdapter(adapter);
 

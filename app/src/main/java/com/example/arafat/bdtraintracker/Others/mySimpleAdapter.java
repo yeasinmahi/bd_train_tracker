@@ -2,14 +2,17 @@ package com.example.arafat.bdtraintracker.Others;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.arafat.bdtraintracker.Activity.SentSms;
 import com.example.arafat.bdtraintracker.Db.DbHelper;
 import com.example.arafat.bdtraintracker.Model.Train;
 import com.example.arafat.bdtraintracker.R;
@@ -17,11 +20,13 @@ import com.example.arafat.bdtraintracker.R;
 import java.util.List;
 import java.util.Map;
 
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
+
 /**
  * Created by Arafat on 16/03/2017.
  */
 
-public class mySimpleAdapter extends SimpleAdapter {
+public class MySimpleAdapter extends SimpleAdapter {
 
     private final Context context;
     private List<Map<String, Object>> data;
@@ -29,7 +34,7 @@ public class mySimpleAdapter extends SimpleAdapter {
     private String[] from;
     private int[] to;
 
-    public mySimpleAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {
+    public MySimpleAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {
         super(context, data, resource, from, to);
         this.context = context;
         this.data = (List<Map<String, Object>>) data;
@@ -39,7 +44,7 @@ public class mySimpleAdapter extends SimpleAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, final View convertView, ViewGroup parent) {
         //make view here
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
         View rowView = inflater.inflate(resource, null, true);
@@ -60,15 +65,17 @@ public class mySimpleAdapter extends SimpleAdapter {
         sentSmsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Toast.makeText(context, train.getName(), Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(context, SentSms.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("code", train.getCode());
+                context.startActivity(intent);
+                //Toast.makeText(context, train.getName(), Toast.LENGTH_LONG).show();
             }
 
         });
         viewDetailsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utility.popUpWindow(context,train);
+                Utility.popUpTrainInfo(context,train);
                 //Toast.makeText(context, train.getOffday(), Toast.LENGTH_LONG).show();
             }
         });
