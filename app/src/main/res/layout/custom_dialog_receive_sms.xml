@@ -13,10 +13,11 @@
         android:textColor="#eee"
         android:textSize="20dp"
         android:text="2888" />
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/smsHeaderTextView"
+        android:layout_above="@id/dialogButtonOK"
         android:orientation="vertical">
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -36,7 +37,7 @@
                 android:id="@+id/smsTimeTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="right"
+                android:layout_alignRight="@id/messageTextView"
 
                 android:textColor="#252525"
                 android:textSize="10dp"
@@ -45,14 +46,15 @@
         </RelativeLayout>
 
 
-    </LinearLayout>
+    </ScrollView>
     <Button
         android:id="@+id/dialogButtonOK"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_margin="15dp"
+        android:background="#456556"
         android:text=" Ok " />
 
 

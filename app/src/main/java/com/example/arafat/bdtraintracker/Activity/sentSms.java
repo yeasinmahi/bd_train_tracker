@@ -23,6 +23,7 @@ public class SentSms extends MyActivity {
     EditText recipientTextEdit = null;
     EditText contentTextEdit =null;
     TextView titleTextView =null;
+    TextView warningEditText =null;
     String trainCode;
     BroadcastReceiver broadcastReceiver;
     @Override
@@ -39,6 +40,7 @@ public class SentSms extends MyActivity {
         recipientTextEdit = (EditText)this.findViewById(R.id.editTextEnterReceipents);
         contentTextEdit = (EditText)this.findViewById(R.id.editTextCompose);
         titleTextView = (TextView)this.findViewById(R.id.textViewTitle);
+        warningEditText = (TextView)this.findViewById(R.id.warningEditText);
         trainCode = intent.getStringExtra("code");
         recipientTextEdit.setText(Utility.receipentNumber);
         contentTextEdit.setText(Utility.getSmsBody(trainCode));
@@ -66,8 +68,8 @@ public class SentSms extends MyActivity {
                         message = "Error: Radio off.";
                         break;
                 }
-                titleTextView.setText(message);
-                titleTextView.setTextColor(error ? Color.RED : Color.GREEN);
+                warningEditText.setText(message);
+                warningEditText.setTextColor(error ? Color.RED : Color.GREEN);
 
             }
         };
