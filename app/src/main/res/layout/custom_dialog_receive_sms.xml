@@ -2,6 +2,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#E9EBEE">
+
+
     <TextView
         android:id="@+id/smsHeaderTextView"
         android:layout_width="match_parent"
@@ -17,8 +19,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/smsHeaderTextView"
-        android:layout_above="@id/dialogButtonOK"
+        android:layout_above="@+id/dialogButtonOK"
         android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/use_icon"/>
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,18 +55,27 @@
                 android:text="31 march 7:27pm"
                 android:layout_below="@+id/messageTextView" />
         </RelativeLayout>
+        </LinearLayout>
 
 
     </ScrollView>
     <Button
         android:id="@+id/dialogButtonOK"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/gapp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:background="#456556"
         android:text=" Ok " />
+    
+    <LinearLayout
+        android:id="@+id/gapp"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent"
+        android:orientation="horizontal">
 
+    </LinearLayout>
 
 </RelativeLayout>

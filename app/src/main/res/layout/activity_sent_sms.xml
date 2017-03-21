@@ -2,17 +2,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E9EBEE">
+    <TextView
+        android:id="@+id/chargedMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:padding="10dp"
+        android:textSize="16dp"
+        android:background="#FFFF00"
+        android:layout_alignParentTop="true"
+        android:text="@string/charged_warning"/>
+    <LinearLayout
+        android:id="@+id/gap"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@id/chargedMessage"
+        android:background="@color/transparent"
+        android:orientation="horizontal">
 
+    </LinearLayout>
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:padding="10dp"
         android:background="@color/colorAccent"
+        android:layout_below="@+id/gap"
         android:textColor="#eee"
+        android:layout_marginBottom="10dp"
         android:textSize="20dp"
         android:text="Send SMS " />
+
 
     <Button
         android:id="@+id/buttonSendNow"
@@ -34,6 +54,7 @@
         android:padding="10dp"
         android:inputType ="number"
         android:background="#fff"
+        android:textColor="#000"
         android:enabled="false"
         android:hint="Enter Receipent">
     </EditText>
@@ -44,6 +65,7 @@
         android:layout_below="@id/editTextEnterReceipents"
         android:layout_above="@+id/warningEditText"
         android:background="#fff"
+        android:textColor="#000"
         android:layout_margin="6dp"
         android:padding="10dp"
         android:enabled="false"

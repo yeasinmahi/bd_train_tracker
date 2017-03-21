@@ -3,6 +3,9 @@ package com.example.arafat.bdtraintracker.Others;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -21,8 +24,10 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Random;
 
 /**
@@ -64,8 +69,10 @@ public class Utility {
     }
     public static Date getDate(String date, myDateFormat dateDFormat){
         DateFormat format = new SimpleDateFormat(dateDFormat.toString());
+        Date myDate;
         try {
-            return format.parse(date);
+            myDate= format.parse(date);
+            return myDate;
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -167,6 +174,53 @@ public class Utility {
             dialog.show();
         }
 
+    }
+    private static String getDayOfNow(){
+        Calendar calendar = Calendar.getInstance();
+        Date date = calendar.getTime();
+        return new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date.getTime());
+    }
+    private static Calendar getCalenderFromTime(Date time){
+        Calendar c =Calendar.getInstance();
+        c.setTime(time);
+        c.set(1990,01,01);
+        return c;
+    }
+    private static boolean isBetweenTime(Date fTime,Date tTime){
+        Calendar c1 = getCalenderFromTime(fTime);
+        Calendar c2= getCalenderFromTime(tTime);
+        c2.add(Calendar.HOUR, 1);
+        Calendar c3 = getCalenderFromTime(new Date());
+        //c3.add(Calendar.DATE, 1);
+
+        Date currentTime = c3.getTime();
+        Date fromTime = c1.getTime();
+        Date toTime = c2.getTime();
+        if (fromTime.after(toTime)){
+            c1.add(Calendar.DATE,-1);
+            fromTime = c1.getTime();
+        }
+        if (currentTime.after(fromTime) && currentTime.before(toTime))
+            return true;
+        return false;
+    }
+    public static boolean getTrainStatus(Train train){
+        String day = getDayOfNow();
+        if (!day.equals(train.getOffday())){
+            boolean isBetween= isBetweenTime(train.getFromTime(),train.getToTime());
+            if (isBetween){
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+    public static void setBackground(Context context,View view,int id){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            view.setBackground(ContextCompat.getDrawable(context, id));
+        }else {
+            view.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.circle_online_status));
+        }
     }
 }
 

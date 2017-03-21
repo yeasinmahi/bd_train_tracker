@@ -3,11 +3,15 @@ package com.example.arafat.bdtraintracker.Others;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -61,6 +65,17 @@ public class MySimpleAdapter extends SimpleAdapter {
         //button implementation
         Button sentSmsButton = (Button) rowView.findViewById(R.id.sentSmsButton);
         Button viewDetailsButton = (Button) rowView.findViewById(R.id.viewDetailsButton);
+        ImageView trainStatus = (ImageView) rowView.findViewById(R.id.statusImage);
+        if (Utility.getTrainStatus(train)){
+            Utility.setBackground(context,trainStatus,R.drawable.circle_online_status);
+            Utility.setBackground(context,sentSmsButton,R.mipmap.sms_icon);
+            sentSmsButton.setEnabled(true);
+
+        }else {
+            Utility.setBackground(context,trainStatus,R.drawable.circle_offline_status);
+            Utility.setBackground(context,sentSmsButton,R.mipmap.sms_disable_icon);
+            sentSmsButton.setEnabled(false);
+        }
 
         sentSmsButton.setOnClickListener(new View.OnClickListener() {
             @Override

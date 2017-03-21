@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
     <uses-feature android:name="andrdoi.hardware.telephony"
         android:required="true"/>
 
@@ -29,6 +30,7 @@
             android:exported="true">
             <intent-filter android:priority="999">
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
     </application>

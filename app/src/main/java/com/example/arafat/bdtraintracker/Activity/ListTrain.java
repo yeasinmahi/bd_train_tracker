@@ -25,7 +25,7 @@ public class ListTrain extends MyListActivity{
         PopulatedOpenHelper.getInstance(getApplicationContext());
         setContentView(R.layout.activity_list_train);
         Init();
-        MySimpleAdapter adapter = new MySimpleAdapter(this, list, R.layout.custom_row_view, new String[] { "name", "place","time"}, new int[] { R.id.nameTextView, R.id.locationTextView,R.id.timeTextView});
+        MySimpleAdapter adapter = new MySimpleAdapter(this, list, R.layout.custom_row_view, new String[] { "name"}, new int[] { R.id.nameTextView});
         populateList();
         setListAdapter(adapter);
 
@@ -43,6 +43,7 @@ public class ListTrain extends MyListActivity{
         for (Train train : Utility.getTrains()) {
             HashMap<String, String> temp = new HashMap<String, String>();
             temp.put("id", String.valueOf(train.getId()));
+            temp.put("online", String.valueOf(Utility.getTrainStatus(train)));
             temp.put("name", train.getName());
             temp.put("place", train.getFrom()+"-"+train.getTo());
             temp.put("time", Utility.getDateAsString(train.getFromTime(), Utility.myDateFormat.hh_mm_m)+"-"+Utility.getDateAsString(train.getToTime(), Utility.myDateFormat.hh_mm_m));
