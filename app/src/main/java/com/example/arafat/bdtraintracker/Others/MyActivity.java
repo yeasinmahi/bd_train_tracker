@@ -22,7 +22,7 @@ public class MyActivity extends Activity {
     }
 
     protected void onPause() {
-        clearReferences();
+        //clearReferences();
         super.onPause();
     }
 

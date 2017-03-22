@@ -9,7 +9,7 @@
         android:textColor="#000"
         android:padding="10dp"
         android:textSize="16dp"
-        android:background="#FFFF00"
+        android:background="#F2DEDE"
         android:layout_alignParentTop="true"
         android:text="@string/charged_warning"/>
     <LinearLayout
@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_margin="6dp"
-        android:background="#ad7103"
+        android:background="#D9EDF7"
         android:padding="10dp"
         android:enabled="false"
         android:textSize="20dp"

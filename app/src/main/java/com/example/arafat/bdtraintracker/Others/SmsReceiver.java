@@ -1,11 +1,10 @@
 package com.example.arafat.bdtraintracker.Others;
 
-import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.telephony.SmsMessage;;import com.example.arafat.bdtraintracker.Activity.ListTrain;
+import android.telephony.SmsMessage;;
 
 /**
  * Created by Arafat on 18/03/2017.
@@ -43,9 +42,29 @@ public class SmsReceiver extends BroadcastReceiver{
             }
             if (sender.equals("2888")) {
                 abortBroadcast();
-                Context context1 = ((MyApplication)context.getApplicationContext()).getContext();
-                Utility.popUpReceiveSms(context1,str);
+
             }
+            Context context1 = ((MyApplication)context.getApplicationContext()).getContext();
+
+            if (context1!=null){
+                Utility.popUpReceiveSms(context1,str, false);
+            }else {
+                try {
+                    Intent startIntent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
+                    startIntent.setFlags(
+                            Intent.FLAG_ACTIVITY_REORDER_TO_FRONT |
+                                    Intent.FLAG_ACTIVITY_NEW_TASK |
+                                    Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED
+                    );
+                    startIntent.putExtra("message",str);
+                    context.startActivity(startIntent);
+
+                }catch (Exception ex){
+
+                }
+            }
+
+
 
 
         }

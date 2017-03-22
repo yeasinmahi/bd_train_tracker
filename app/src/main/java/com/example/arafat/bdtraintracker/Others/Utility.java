@@ -1,11 +1,13 @@
 package com.example.arafat.bdtraintracker.Others;
 
 import android.app.Activity;
+import android.app.Application;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.print.PrintHelper;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -27,8 +29,12 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Locale;
 import java.util.Random;
+import java.util.Set;
+
+import static android.icu.text.UnicodeSet.from;
 
 /**
  * Created by Arafat on 03/03/2017.
@@ -151,7 +157,7 @@ public class Utility {
         dialog.show();
 
     }
-    public static void popUpReceiveSms(final Context context,final String message) {
+    public static void popUpReceiveSms(final Context context, final String message, final boolean haveToClose) {
         final Dialog dialog = new Dialog(context,R.style.MyTheme);
         dialog.setContentView(R.layout.custom_dialog_receive_sms);
         final TextView messageTextView = (TextView) dialog.findViewById(R.id.messageTextView);
@@ -164,6 +170,9 @@ public class Utility {
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (haveToClose){
+                    System.exit(0);
+                }
                 dialog.dismiss();
             }
         });
@@ -175,10 +184,14 @@ public class Utility {
         }
 
     }
+    private static String today=null;
     private static String getDayOfNow(){
-        Calendar calendar = Calendar.getInstance();
-        Date date = calendar.getTime();
-        return new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date.getTime());
+        if (today==null){
+            Calendar calendar = Calendar.getInstance();
+            Date date = calendar.getTime();
+            today= new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date.getTime());
+        }
+        return today;
     }
     private static Calendar getCalenderFromTime(Date time){
         Calendar c =Calendar.getInstance();
@@ -222,5 +235,16 @@ public class Utility {
             view.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.circle_online_status));
         }
     }
+    public static String test(ArrayList<Train> list,int id){
+        //Collections.sort(list, String.CASE_INSENSITIVE_ORDER);
+       for (Train train:list){
+           if(train.getId()==id){
+               return train.getName();
+           }
+       }
+        return null;
+    }
+
+
 }
 

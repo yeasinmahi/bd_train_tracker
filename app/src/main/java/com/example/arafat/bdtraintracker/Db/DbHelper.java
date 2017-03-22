@@ -36,6 +36,18 @@ public class DbHelper extends SQLiteOpenHelper {
 		}
 		return instance;
 	}
+	private Train getTrainFromCursor(Cursor cursor){
+		Train train = new Train();
+		train.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex("id"))));
+		train.setCode(cursor.getString(cursor.getColumnIndex("code")));
+		train.setName(cursor.getString(cursor.getColumnIndex("name")));
+		train.setOffday(cursor.getString(cursor.getColumnIndex("offDay")));
+		train.setFrom(cursor.getString(cursor.getColumnIndex("from")));
+		train.setFromTime(Utility.getDate(cursor.getString(cursor.getColumnIndex("fromTime")), Utility.myDateFormat.HH_MM));
+		train.setTo(cursor.getString(cursor.getColumnIndex("to")));
+		train.setToTime(Utility.getDate(cursor.getString(cursor.getColumnIndex("toTime")), Utility.myDateFormat.HH_MM));
+		return train;
+	}
 	 public ArrayList<Train> getAllTrain() {
 		ArrayList<Train> trains = new ArrayList<Train>();
 		// Rest Index Of Spinner from database
@@ -43,16 +55,7 @@ public class DbHelper extends SQLiteOpenHelper {
 		Cursor cursor = db.query("train", null, null, null, null, null, null);
 		if (cursor != null && cursor.getCount() > 0) {
 			while (cursor.moveToNext()) {
-				Train train = new Train();
-				train.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex("id"))));
-				train.setCode(cursor.getString(cursor.getColumnIndex("code")));
-				train.setName(cursor.getString(cursor.getColumnIndex("name")));
-				train.setOffday(cursor.getString(cursor.getColumnIndex("offDay")));
-				train.setFrom(cursor.getString(cursor.getColumnIndex("from")));
-				train.setFromTime(Utility.getDate(cursor.getString(cursor.getColumnIndex("fromTime")), Utility.myDateFormat.HH_MM));
-				train.setTo(cursor.getString(cursor.getColumnIndex("to")));
-				train.setToTime(Utility.getDate(cursor.getString(cursor.getColumnIndex("toTime")), Utility.myDateFormat.HH_MM));
-				trains.add(train);
+				trains.add(getTrainFromCursor(cursor));
 			}
 		}
 		if (cursor != null) {
@@ -67,14 +70,7 @@ public class DbHelper extends SQLiteOpenHelper {
 		Cursor cursor = db.rawQuery("select * from train where id = "+id, null);
 		if (cursor != null && cursor.getCount() > 0) {
 			while (cursor.moveToNext()) {
-				train.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex("id"))));
-				train.setCode(cursor.getString(cursor.getColumnIndex("code")));
-				train.setName(cursor.getString(cursor.getColumnIndex("name")));
-				train.setOffday(cursor.getString(cursor.getColumnIndex("offDay")));
-				train.setFrom(cursor.getString(cursor.getColumnIndex("from")));
-				train.setFromTime(Utility.getDate(cursor.getString(cursor.getColumnIndex("fromTime")), Utility.myDateFormat.HH_MM));
-				train.setTo(cursor.getString(cursor.getColumnIndex("to")));
-				train.setToTime(Utility.getDate(cursor.getString(cursor.getColumnIndex("toTime")), Utility.myDateFormat.HH_MM));
+				train = getTrainFromCursor(cursor);
 			}
 		}
 		if (cursor != null) {
@@ -90,16 +86,7 @@ public class DbHelper extends SQLiteOpenHelper {
 		Cursor cursor = db.rawQuery(sql, null);
 		if (cursor != null && cursor.getCount() > 0) {
 			while (cursor.moveToNext()) {
-				Train train = new Train();
-				train.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex("id"))));
-				train.setCode(cursor.getString(cursor.getColumnIndex("code")));
-				train.setName(cursor.getString(cursor.getColumnIndex("name")));
-				train.setOffday(cursor.getString(cursor.getColumnIndex("offDay")));
-				train.setFrom(cursor.getString(cursor.getColumnIndex("from")));
-				train.setFromTime(Utility.getDate(cursor.getString(cursor.getColumnIndex("fromTime")), Utility.myDateFormat.HH_MM));
-				train.setTo(cursor.getString(cursor.getColumnIndex("to")));
-				train.setToTime(Utility.getDate(cursor.getString(cursor.getColumnIndex("toTime")), Utility.myDateFormat.HH_MM));
-				trains.add(train);
+				trains.add(getTrainFromCursor(cursor));
 			}
 		}
 		if (cursor != null) {

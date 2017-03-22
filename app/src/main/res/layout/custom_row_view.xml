@@ -1,75 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="horizontal"
     android:paddingLeft="15dp"
     android:paddingRight="15dp">
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:layout_marginRight="10dp"
-    android:layout_marginTop="20dp">
-    <ImageView
-        android:id="@+id/statusImage"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:background="@drawable/circle_offline_status" />
-</LinearLayout>
 
+    <RelativeLayout
+        android:id="@+id/onlineStatusLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="7dp">
 
-    <TextView
-        android:id="@+id/nameTextView"
-        android:layout_width="0dp"
-        android:layout_height="fill_parent"
-        android:layout_weight="2"
-        android:gravity="center_vertical"
-        android:textColor="#030c1e"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/statusImage"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/circle_offline_status" />
+    </RelativeLayout>
 
-    <!--<TextView
-        android:id="@+id/locationTextView"
-        android:layout_width="0dp"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:textColor="#030c1e"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/timeTextView"
-        android:layout_width="0dp"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:textColor="#030c1e"
-        android:textSize="14sp" />-->
-
-<Button
-        android:id="@+id/viewDetailsButton"
-        android:layout_width="0dp"
-        android:layout_height="fill_parent"
-        android:layout_weight=".5"
-        android:background="@mipmap/info"
-        android:textColor="#030c1e"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-<LinearLayout
-    android:layout_width="0dp"
-    android:layout_height="match_parent"
-    android:layout_weight=".5">
-    <Button
-        android:id="@+id/sentSmsButton"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:background="@drawable/send"
-        android:textColor="#030c1e"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-</LinearLayout>
+        android:layout_toLeftOf="@+id/infoLayer"
+        android:layout_toRightOf="@+id/onlineStatusLayout"
+        android:gravity="center_vertical">
 
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:textColor="#030c1e"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/infoLayer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@+id/smsLayout">
+
+        <Button
+            android:id="@+id/viewDetailsButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@mipmap/info"
+            android:layout_gravity="center"
+            android:textColor="#030c1e"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/smsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true">
+
+        <Button
+            android:id="@+id/sentSmsButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/send"
+            android:textColor="#030c1e"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.arafat.bdtraintracker.Activity;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -8,6 +9,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.telephony.SmsManager;
 import android.text.TextUtils;
 import android.view.View;
@@ -69,10 +71,11 @@ public class SentSms extends MyActivity {
                         break;
                 }
                 warningEditText.setText(message);
-                warningEditText.setTextColor(error ? Color.RED : Color.GREEN);
+                warningEditText.setTextColor(error ? Color.RED : Color.parseColor("#466F84"));
 
             }
         };
+        ActivityCompat.requestPermissions(SentSms.this, new String[]{Manifest.permission.RECEIVE_SMS}, 1);
         registerReceiver(broadcastReceiver,new IntentFilter(ACTION_SMS_SENT));
     }
 
