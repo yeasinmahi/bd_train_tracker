@@ -19,11 +19,8 @@ public class SmsReceiver extends BroadcastReceiver{
     public void onReceive(Context context, Intent intent) {
         // Get the data (SMS data) bound to intent
         Bundle bundle = intent.getExtras();
-
         SmsMessage[] msgs = null;
-
         String str = "";
-
         if (bundle != null) {
             // Retrieve the SMS Messages received
             Object[] pdus = (Object[]) bundle.get("pdus");
@@ -40,33 +37,28 @@ public class SmsReceiver extends BroadcastReceiver{
                 // Newline <img draggable="false" class="emoji" alt="🙂" src="https://s.w.org/images/core/emoji/72x72/1f642.png">
                 str += "\n";
             }
-            if (sender.equals("2888")) {
+            if (sender.equals(Utility.ReceipentNumber.toString())) {
                 abortBroadcast();
+                Context context1 = ((MyApplication)context.getApplicationContext()).getContext();
 
-            }
-            Context context1 = ((MyApplication)context.getApplicationContext()).getContext();
+                if (context1!=null){
+                    Utility.popUpReceiveSms(context1,str, false);
+                }else {
+                    try {
+                        Intent startIntent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
+                        startIntent.setFlags(
+                                Intent.FLAG_ACTIVITY_REORDER_TO_FRONT |
+                                        Intent.FLAG_ACTIVITY_NEW_TASK |
+                                        Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED
+                        );
+                        startIntent.putExtra("message",str);
+                        context.startActivity(startIntent);
 
-            if (context1!=null){
-                Utility.popUpReceiveSms(context1,str, false);
-            }else {
-                try {
-                    Intent startIntent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
-                    startIntent.setFlags(
-                            Intent.FLAG_ACTIVITY_REORDER_TO_FRONT |
-                                    Intent.FLAG_ACTIVITY_NEW_TASK |
-                                    Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED
-                    );
-                    startIntent.putExtra("message",str);
-                    context.startActivity(startIntent);
+                    }catch (Exception ex){
 
-                }catch (Exception ex){
-
+                    }
                 }
             }
-
-
-
-
         }
     }
 }

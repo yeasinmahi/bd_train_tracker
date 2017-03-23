@@ -22,7 +22,7 @@ import com.example.arafat.bdtraintracker.R;
 
 public class SentSms extends MyActivity {
     public static final String ACTION_SMS_SENT = "com.example.android.apis.os.SMS_SENT_ACTION";
-    EditText recipientTextEdit = null;
+    EditText sendingTextEdit = null;
     EditText contentTextEdit =null;
     TextView titleTextView =null;
     TextView warningEditText =null;
@@ -39,12 +39,12 @@ public class SentSms extends MyActivity {
 
     private void Init() {
         Intent intent = getIntent();
-        recipientTextEdit = (EditText)this.findViewById(R.id.editTextEnterReceipents);
+        sendingTextEdit = (EditText)this.findViewById(R.id.editTextEnterReceipents);
         contentTextEdit = (EditText)this.findViewById(R.id.editTextCompose);
         titleTextView = (TextView)this.findViewById(R.id.textViewTitle);
         warningEditText = (TextView)this.findViewById(R.id.warningEditText);
         trainCode = intent.getStringExtra("code");
-        recipientTextEdit.setText(Utility.receipentNumber);
+        sendingTextEdit.setText(Utility.SenderNumber);
         contentTextEdit.setText(Utility.getSmsBody(trainCode));
         // Register broadcast receivers for SMS sent and delivered intents
         broadcastReceiver = new BroadcastReceiver() {
@@ -82,7 +82,7 @@ public class SentSms extends MyActivity {
     public void onClickSend(View v)
     {
         //Get recipient from user and check for null
-        if (TextUtils.isEmpty(recipientTextEdit.getText())) {
+        if (TextUtils.isEmpty(sendingTextEdit.getText())) {
             titleTextView.setText("Enter Receipent");
             titleTextView.setTextColor(Color.RED);
             return;
@@ -98,7 +98,7 @@ public class SentSms extends MyActivity {
         SmsManager sms = SmsManager.getDefault();
         /*sms.sendTextMessage(Utility.receipentNumber,null,Utility.getSmsBody(trainCode),PendingIntent.getBroadcast(
                 this, 0, new Intent(ACTION_SMS_SENT), 0),null);*/
-        sms.sendTextMessage("2888",null,"FF",PendingIntent.getBroadcast(
+        sms.sendTextMessage(Utility.SenderNumber,null,Utility.getSmsBody(trainCode),PendingIntent.getBroadcast(
                 this, 0, new Intent(ACTION_SMS_SENT), 0),null);
 
         //sms.sendTextMessage("");
@@ -106,7 +106,7 @@ public class SentSms extends MyActivity {
         /*//sms body coming from user input
         String strSMSBody = contentTextEdit.getText().toString();
         //sms recipient added by user from the activity screen
-        String strReceipentsList = recipientTextEdit.getText().toString();
+        String strReceipentsList = sendingTextEdit.getText().toString();
 
         List<String> messages = sms.divideMessage(strSMSBody);
         for (String message : messages) {

@@ -43,7 +43,8 @@ import static android.icu.text.UnicodeSet.from;
 public class Utility {
     public static final String DbName = "btt.db";
     public static int DbVersion = 1;
-    public static String receipentNumber = "16318";
+    public static String SenderNumber = "16318";
+    public static String ReceipentNumber = "0416318";
     public static String getSmsBody(String code){
         return "TR "+code;
     }
@@ -160,9 +161,11 @@ public class Utility {
     public static void popUpReceiveSms(final Context context, final String message, final boolean haveToClose) {
         final Dialog dialog = new Dialog(context,R.style.MyTheme);
         dialog.setContentView(R.layout.custom_dialog_receive_sms);
+        final TextView smsHeaderTextView = (TextView) dialog.findViewById(R.id.smsHeaderTextView);
         final TextView messageTextView = (TextView) dialog.findViewById(R.id.messageTextView);
         final TextView smsTimeTextView = (TextView) dialog.findViewById(R.id.smsTimeTextView);
         Date time = new Date();
+        smsHeaderTextView.setText(Utility.ReceipentNumber);
         smsTimeTextView.setText(getDateAsString(time,myDateFormat.MMM_dd_h_mm_m));
         messageTextView.setText(message);
 

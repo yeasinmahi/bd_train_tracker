@@ -1,17 +1,12 @@
-package com.example.arafat;
+package com.example.arafat.bdtraintracker.Others;
 
 import android.Manifest;
-import android.app.Application;
-import android.app.ListActivity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.support.v4.app.ActivityCompat;
 
 import com.example.arafat.bdtraintracker.Activity.MainActivity;
-import com.example.arafat.bdtraintracker.Activity.SentSms;
-import com.example.arafat.bdtraintracker.Others.MyApplication;
 
 /**
  * Created by Arafat on 22/03/2017.
