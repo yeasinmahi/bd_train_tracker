@@ -35,7 +35,7 @@ public class Utility {
     public static final String DbName = "btt.db";
     public static int DbVersion = 1;
     public static String SenderNumber = "16318";
-    public static String ReceipentNumber = "0416318";
+    public static String ReceipentNumber = "16318";
     public static String getSmsBody(String code){
         return "TR "+code;
     }
