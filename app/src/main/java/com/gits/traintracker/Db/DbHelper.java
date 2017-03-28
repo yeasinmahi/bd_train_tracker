@@ -1,14 +1,13 @@
-package com.example.arafat.bdtraintracker.Db;
+package com.gits.traintracker.Db;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.arafat.bdtraintracker.Model.Train;
-import com.example.arafat.bdtraintracker.Others.Utility;
+import com.gits.traintracker.Model.Train;
+import com.gits.traintracker.Others.Utility;
 
-import java.sql.Time;
 import java.util.ArrayList;
 
 public class DbHelper extends SQLiteOpenHelper {

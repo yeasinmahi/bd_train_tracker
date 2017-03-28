@@ -1,6 +1,5 @@
-package com.example.arafat.bdtraintracker.Model;
+package com.gits.traintracker.Model;
 
-import java.sql.Time;
 import java.util.Date;
 
 public class Train {

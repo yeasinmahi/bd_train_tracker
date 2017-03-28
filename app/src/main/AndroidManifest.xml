@@ -1,44 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.arafat.bdtraintracker">
+    package="com.gits.traintracker">
 
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <uses-feature android:name="andrdoi.hardware.telephony"
-        android:required="true"/>
 
     <application
-        android:name=".Others.MyApplication"
+        android:name="com.gits.traintracker.Others.MyApplication"
         android:allowBackup="true"
         android:installLocation="internalOnly"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name="com.gits.traintracker.Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.ListTrain" />
-        <activity android:name=".Activity.SentSms"></activity>
+        <activity android:name="com.gits.traintracker.Activity.ListTrain" />
+        <activity android:name="com.gits.traintracker.Activity.SentSms"></activity>
         <receiver
-            android:name=".Others.SmsReceiver"
+            android:name="com.gits.traintracker.Others.SmsReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter android:priority="500">
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name=".Others.ServiceStarter"
-            android:enabled="true"
-            android:exported="true" >
-            <intent-filter android:priority="999" >
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
     </application>

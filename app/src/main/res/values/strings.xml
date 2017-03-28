@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">BD Train Tracker</string>
-    <string name="welcome">Welcome to\r\nBD Train Tracker</string>
+    <string name="app_name">Train Tracker</string>
+    <string name="welcome">Welcome to\r\nTrain Tracker Bangladesh</string>
     <string name="tap">tap to start</string>
     <string name="_data_data_">/data/data/</string>
-    <string name="charged_warning">You may be charged BDT 4 Taka (excluding vat) from your sim carrier for per sms. We are not charged any amount for our service</string>
+    <string name="charged_warning">You may be charged BDT 4 Taka (excluding vat) from your sim carrier per sms. We do not charged any amount for our service</string>
 </resources>

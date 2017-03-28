@@ -1,4 +1,4 @@
-package com.example.arafat.bdtraintracker.Others;
+package com.gits.traintracker.Others;
 
 import android.app.Activity;
 import android.app.Application;

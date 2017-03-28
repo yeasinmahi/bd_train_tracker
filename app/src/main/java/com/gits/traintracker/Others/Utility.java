@@ -1,27 +1,22 @@
-package com.example.arafat.bdtraintracker.Others;
+package com.gits.traintracker.Others;
 
 import android.app.Activity;
-import android.app.Application;
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.print.PrintHelper;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.arafat.bdtraintracker.Activity.MainActivity;
-import com.example.arafat.bdtraintracker.Model.Train;
-import com.example.arafat.bdtraintracker.R;
+import com.gits.traintracker.Model.Train;
+import com.gits.traintracker.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import java.sql.Time;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -29,12 +24,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Locale;
 import java.util.Random;
-import java.util.Set;
-
-import static android.icu.text.UnicodeSet.from;
 
 /**
  * Created by Arafat on 03/03/2017.

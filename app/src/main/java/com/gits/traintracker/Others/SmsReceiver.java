@@ -1,4 +1,4 @@
-package com.example.arafat.bdtraintracker.Others;
+package com.gits.traintracker.Others;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -37,7 +37,7 @@ public class SmsReceiver extends BroadcastReceiver{
                 // Newline <img draggable="false" class="emoji" alt="🙂" src="https://s.w.org/images/core/emoji/72x72/1f642.png">
                 str += "\n";
             }
-            if (sender.equals(Utility.ReceipentNumber.toString())) {
+            if (sender.endsWith(Utility.ReceipentNumber.toString())) {
                 abortBroadcast();
                 Context context1 = ((MyApplication)context.getApplicationContext()).getContext();
 

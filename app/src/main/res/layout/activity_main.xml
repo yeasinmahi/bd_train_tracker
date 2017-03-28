@@ -6,28 +6,25 @@
     android:onClick="next" >
 
     <LinearLayout
-        android:id="@+id/tvLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/tvWelcome"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="@string/welcome"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#000"
-            android:textSize="35sp"
+            android:textSize="30sp"
             android:textStyle="italic"
             android:padding="15dp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/btnLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -39,21 +36,19 @@
             android:layout_height="wrap_content"
             android:scaleType="fitCenter"
             android:layout_gravity="center"
-            android:background="@drawable/logo2"
+            android:background="@drawable/logo"
             android:contentDescription="@string/app_name"
             android:onClick="next"/>
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/tv2Layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/tvTap"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
 

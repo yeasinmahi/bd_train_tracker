@@ -1,4 +1,4 @@
-package com.example.arafat.bdtraintracker;
+package com.gits.traintracker;
 
 import org.junit.Test;
 
