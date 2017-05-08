@@ -1,12 +1,12 @@
-package com.gits.traintracker.Activity;
+package com.gits.arafat.traintracker.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.gits.traintracker.Others.MyActivity;
-import com.gits.traintracker.Others.Utility;
-import com.gits.traintracker.R;
+import com.gits.arafat.traintracker.Others.MyActivity;
+import com.gits.arafat.traintracker.Others.Utility;
+import com.gits.arafat.traintracker.R;
 
 public class MainActivity extends MyActivity {
 

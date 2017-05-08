@@ -1,4 +1,4 @@
-package com.gits.traintracker;
+package com.gits.arafat.traintracker;
 
 import org.junit.Test;
 

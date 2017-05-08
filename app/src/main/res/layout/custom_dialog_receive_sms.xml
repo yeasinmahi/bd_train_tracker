@@ -8,68 +8,74 @@
         android:id="@+id/smsHeaderTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:padding="10dp"
+        android:layout_alignParentTop="true"
         android:background="@color/colorAccent"
+        android:padding="10dp"
+        android:text="2888"
         android:textColor="#eee"
-        android:textSize="20dp"
-        android:text="2888" />
+        android:textSize="20dp" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/smsHeaderTextView"
         android:layout_above="@+id/dialogButtonOK"
+        android:layout_below="@id/smsHeaderTextView"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp">
+
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@mipmap/use_icon"/>
+                android:src="@mipmap/use_icon" />
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bubble1">
-            <TextView
-                android:id="@+id/messageTextView"
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="20dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:textColor="#252525"
-                android:textSize="16dp"
-                android:text="body of a message" />
-            <TextView
-                android:id="@+id/smsTimeTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignRight="@id/messageTextView"
+                android:background="@drawable/bubble1">
 
-                android:textColor="#252525"
-                android:textSize="10dp"
-                android:text="31 march 7:27pm"
-                android:layout_below="@+id/messageTextView" />
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/messageTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:padding="20dp"
+                    android:text="body of a message"
+                    android:textColor="#252525"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/smsTimeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/messageTextView"
+
+                    android:layout_below="@+id/messageTextView"
+                    android:text="31 march 7:27pm"
+                    android:textColor="#252525"
+                    android:textSize="10dp" />
+            </RelativeLayout>
         </LinearLayout>
 
 
     </ScrollView>
+
     <Button
         android:id="@+id/dialogButtonOK"
-        android:layout_above="@+id/gapp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/gapp"
         android:layout_margin="15dp"
-        android:textColor="#fff"
-        android:textSize="20dp"
         android:background="#286090"
-        android:text="Ok" />
-    
+        android:text="Ok"
+        android:textColor="#fff"
+        android:textSize="20dp" />
+
     <LinearLayout
         android:id="@+id/gapp"
         android:layout_width="match_parent"

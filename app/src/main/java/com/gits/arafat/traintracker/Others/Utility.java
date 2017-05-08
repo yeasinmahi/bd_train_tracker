@@ -1,4 +1,4 @@
-package com.gits.traintracker.Others;
+package com.gits.arafat.traintracker.Others;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -11,8 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.gits.traintracker.Model.Train;
-import com.gits.traintracker.R;
+import com.gits.arafat.traintracker.Model.Train;
+import com.gits.arafat.traintracker.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;

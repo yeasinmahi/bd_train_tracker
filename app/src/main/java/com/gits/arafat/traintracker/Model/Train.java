@@ -1,4 +1,4 @@
-package com.gits.traintracker.Model;
+package com.gits.arafat.traintracker.Model;
 
 import java.util.Date;
 

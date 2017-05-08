@@ -46,8 +46,8 @@
             android:id="@+id/viewDetailsButton"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@mipmap/info"
             android:layout_gravity="center"
+            android:background="@mipmap/info"
             android:textColor="#030c1e"
             android:textSize="14sp"
             android:textStyle="bold" />

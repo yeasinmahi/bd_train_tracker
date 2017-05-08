@@ -1,13 +1,14 @@
-package com.gits.traintracker.Others;
+package com.gits.arafat.traintracker.Others;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.os.Bundle;
 
 /**
  * Created by Arafat on 18/03/2017.
  */
 
-public class MyActivity extends Activity {
+public class MyListActivity extends ListActivity{
     protected MyApplication myApplication;
 
     public void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,7 @@ public class MyActivity extends Activity {
     }
 
     protected void onPause() {
-        //clearReferences();
+        clearReferences();
         super.onPause();
     }
 
@@ -33,10 +34,10 @@ public class MyActivity extends Activity {
 
     private void clearReferences() {
         Activity currActivity = myApplication.getCurrentActivity();
-        if (this.equals(currActivity)) {
+        if (this.equals(currActivity)){
             myApplication.setCurrentActivity(null);
-            myApplication.setContext(null);
+            myApplication.setContext(this);
         }
-    }
 
+    }
 }

@@ -1,10 +1,12 @@
-package com.gits.traintracker.Others;
+package com.gits.arafat.traintracker.Others;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.telephony.SmsMessage;;
+import android.telephony.SmsMessage;
+
+;
 
 /**
  * Created by Arafat on 18/03/2017.

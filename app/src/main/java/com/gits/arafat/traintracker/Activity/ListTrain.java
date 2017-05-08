@@ -1,16 +1,16 @@
-package com.gits.traintracker.Activity;
+package com.gits.arafat.traintracker.Activity;
 
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.gits.traintracker.Db.DbHelper;
-import com.gits.traintracker.Db.PopulatedOpenHelper;
-import com.gits.traintracker.Model.Train;
-import com.gits.traintracker.Others.MyListActivity;
-import com.gits.traintracker.Others.Utility;
-import com.gits.traintracker.Others.MySimpleAdapter;
-import com.gits.traintracker.R;
+import com.gits.arafat.traintracker.Db.DbHelper;
+import com.gits.arafat.traintracker.Db.PopulatedOpenHelper;
+import com.gits.arafat.traintracker.Model.Train;
+import com.gits.arafat.traintracker.Others.MyListActivity;
+import com.gits.arafat.traintracker.Others.MySimpleAdapter;
+import com.gits.arafat.traintracker.Others.Utility;
+import com.gits.arafat.traintracker.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

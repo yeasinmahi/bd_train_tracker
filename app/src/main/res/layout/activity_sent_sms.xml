@@ -2,16 +2,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E9EBEE">
+
     <TextView
         android:id="@+id/chargedMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:padding="10dp"
-        android:textSize="16dp"
-        android:background="#F2DEDE"
         android:layout_alignParentTop="true"
-        android:text="@string/charged_warning"/>
+        android:background="#F2DEDE"
+        android:padding="10dp"
+        android:text="@string/charged_warning"
+        android:textColor="#000"
+        android:textSize="16dp" />
+
     <LinearLayout
         android:id="@+id/gap"
         android:layout_width="match_parent"
@@ -21,57 +23,59 @@
         android:orientation="horizontal">
 
     </LinearLayout>
+
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:background="@color/colorAccent"
         android:layout_below="@+id/gap"
-        android:textColor="#eee"
         android:layout_marginBottom="10dp"
-        android:textSize="20dp"
-        android:text="Send SMS " />
+        android:background="@color/colorAccent"
+        android:padding="10dp"
+        android:text="Send SMS "
+        android:textColor="#eee"
+        android:textSize="20dp" />
 
 
     <Button
         android:id="@+id/buttonSendNow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="6dp"
-        android:layout_below="@id/textViewTitle"
         android:layout_alignParentRight="true"
-        android:onClick="onClickSend"
-        android:background="@drawable/send_selected" />
+        android:layout_below="@id/textViewTitle"
+        android:layout_margin="6dp"
+        android:background="@drawable/send_selected"
+        android:onClick="onClickSend" />
+
     <EditText
         android:id="@+id/editTextEnterReceipents"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="6dp"
-        android:layout_below="@id/textViewTitle"
         android:layout_alignParentLeft="true"
+        android:layout_below="@id/textViewTitle"
+        android:layout_margin="6dp"
         android:layout_toLeftOf="@id/buttonSendNow"
-        android:padding="10dp"
-        android:inputType ="number"
         android:background="#fff"
-        android:textColor="#000"
         android:enabled="false"
-        android:hint="Enter Receipent">
-    </EditText>
+        android:hint="Enter Receipent"
+        android:inputType="number"
+        android:padding="10dp"
+        android:textColor="#000"></EditText>
+
     <EditText
         android:id="@+id/editTextCompose"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/editTextEnterReceipents"
         android:layout_above="@+id/warningEditText"
-        android:background="#fff"
-        android:textColor="#000"
+        android:layout_below="@id/editTextEnterReceipents"
         android:layout_margin="6dp"
-        android:padding="10dp"
+        android:background="#fff"
         android:enabled="false"
         android:gravity="left|top"
-        android:hint="Type your message here" >
-    </EditText>
+        android:hint="Type your message here"
+        android:padding="10dp"
+        android:textColor="#000"></EditText>
+
     <TextView
         android:id="@+id/warningEditText"
         android:layout_width="fill_parent"
@@ -79,12 +83,10 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="6dp"
         android:background="#D9EDF7"
-        android:padding="10dp"
         android:enabled="false"
-        android:textSize="20dp"
-        android:gravity="center" >
-    </TextView>
-
+        android:gravity="center"
+        android:padding="10dp"
+        android:textSize="20dp"></TextView>
 
 
 </RelativeLayout>

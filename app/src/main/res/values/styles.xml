@@ -9,6 +9,7 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">false</item>
     </style>
+
     <style name="MyTheme" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:alertDialogStyle">@style/CustomAlertDialogStyle</item>
         <item name="android:windowNoTitle">true</item>
@@ -21,6 +22,7 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">12sp</item>
     </style>
+
     <style name="CustomAlertDialogStyle">
         <item name="android:bottomBright">@color/transparent</item>
         <item name="android:bottomDark">@color/transparent</item>

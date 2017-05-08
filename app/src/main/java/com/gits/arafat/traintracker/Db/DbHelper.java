@@ -1,12 +1,12 @@
-package com.gits.traintracker.Db;
+package com.gits.arafat.traintracker.Db;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.gits.traintracker.Model.Train;
-import com.gits.traintracker.Others.Utility;
+import com.gits.arafat.traintracker.Model.Train;
+import com.gits.arafat.traintracker.Others.Utility;
 
 import java.util.ArrayList;
 
@@ -48,7 +48,7 @@ public class DbHelper extends SQLiteOpenHelper {
 		return train;
 	}
 	 public ArrayList<Train> getAllTrain() {
-		ArrayList<Train> trains = new ArrayList<Train>();
+		ArrayList<Train> trains = new ArrayList<>();
 		// Rest Index Of Spinner from database
 		SQLiteDatabase db = getReadableDatabase();
 		Cursor cursor = db.query("train", null, null, null, null, null, null);
