@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.android.support-support-v4-25.2.0_38ff38729aeb595f9048acd646e6c332e8b106d1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\10.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ea03bbfaed89818f233ee9918fac493f2b63895a">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-gcm-10.2.0_ced1449d96baa60660623375a94d81cc891794e4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\10.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aa23e4589287adb431ef59d6c78af79ab8885682">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-ads-10.2.0_3ba65e3611552300c79dd9ae1c81f4f1ad53c449.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.android.support-support-vector-drawable-25.2.0_988dccbc7dc80a9bb96ddee114f0e2f3028bf387.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.android.support-support-compat-25.2.0_c36ad99444acca6a58de784ac8e932d6478a08d4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.android.support-support-core-ui-25.2.0_c53f1ddaf92087eeb98dd5068695fa9f184f29e2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-tasks-10.2.0_ee7abbaff8689967e2fc3d379ef30a0eb6b5c602.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3d13e510077b35fe8e49930a627dd849ad5da0dc">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-base-10.2.0_52229be67fb0530834086668da652fde2aab146e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-basement-10.2.0_49d52dd67854074def0198a11943b9d2c285fbdd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4ef2d91da513c4d7e773ae438fe04d0e4c135957">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-ads-lite-10.2.0_e99a9d6c871eabcc53828581ef6e94824058d6bf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gass\10.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="857ce7350acf811749c8fd0254d3d39b02aa71f5">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-gass-10.2.0_8bca4e2c5057b2df030c1c67b81da0b5ba8d0146.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\SDK\extras\android\m2repository\com\android\support\support-annotations\25.2.0\support-annotations-25.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\support-annotations-25.2.0_693b52f831c21d13f472a6515a00da9c860105ec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\10.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b831d3902674d096189451d46fce219e2c2904b7">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-auth-10.2.0_f2abf330bb060b3b60d99f7768977f1fd951e081.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\10.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3f4483afd050f3be12db7838422309446a45daa1">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-clearcut-10.2.0_9172626071f86793080b941eb2ce08d68dd6d55f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\10.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="421a5cebe9ff187c98075c59786e9464c5c67d36">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-iid-10.2.0_7c4359cc9044fb3990a8e2a828c702ae6ddf1624.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.android.support-support-media-compat-25.2.0_a0a7e3157bd3a793dc6472069add077bc1f178c8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.android.support-support-core-utils-25.2.0_0f333d0b495550d27547fbb697934c08d9df01ff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\10.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4e01b82d664e1a8253b2b9658e74b5da35c8771d">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-auth-base-10.2.0_b90f1134283fa4b96eacd765ca9f6123e2fe10aa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.android.support-animated-vector-drawable-25.2.0_3c4359fee99d6144a2b604b0810d18a8f278a0d0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.android.support-support-fragment-25.2.0_c194e65eafa53a07809040c3eae73447da66b17f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
+        <dex dex="E:\Projects\GITS\BDTrainTracker\app\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-25.2.0_5212565d67a895aefd3b5a7d93c3e73ae1e393d7.jar" />
+    </item>
+
+</items>
