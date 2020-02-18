@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.gits.arafat.traintracker">
+    package="com.devfolder.arafat.traintracker">
 
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
 
     <application
-        android:name="com.gits.arafat.traintracker.Others.MyApplication"
+        android:name="com.devfolder.arafat.traintracker.Others.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:installLocation="internalOnly"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.gits.arafat.traintracker.Activity.MainActivity">
+        <activity android:name="com.devfolder.arafat.traintracker.Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.gits.arafat.traintracker.Activity.ListTrain" />
-        <activity android:name="com.gits.arafat.traintracker.Activity.SentSms"></activity>
+        <activity android:name="com.devfolder.arafat.traintracker.Activity.ListTrain" />
+        <activity android:name="com.devfolder.arafat.traintracker.Activity.SentSms"></activity>
 
         <receiver
-            android:name="com.gits.arafat.traintracker.Others.SmsReceiver"
+            android:name="com.devfolder.arafat.traintracker.Others.SmsReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter android:priority="500">

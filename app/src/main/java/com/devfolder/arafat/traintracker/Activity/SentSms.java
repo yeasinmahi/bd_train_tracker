@@ -1,4 +1,4 @@
-package com.gits.arafat.traintracker.Activity;
+package com.devfolder.arafat.traintracker.Activity;
 
 import android.Manifest;
 import android.app.Activity;
@@ -16,12 +16,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.gits.arafat.traintracker.Others.MyActivity;
-import com.gits.arafat.traintracker.Others.Utility;
-import com.gits.arafat.traintracker.R;
+import com.devfolder.arafat.traintracker.Others.MyActivity;
+import com.devfolder.arafat.traintracker.Others.Utility;
+import com.devfolder.arafat.traintracker.R;
 
 public class SentSms extends MyActivity {
-    public static final String ACTION_SMS_SENT = "com.gits.android.apis.os.SMS_SENT_ACTION";
+    public static final String ACTION_SMS_SENT = "com.devfolder.android.apis.os.SMS_SENT_ACTION";
     EditText sendingTextEdit = null;
     EditText contentTextEdit =null;
     TextView titleTextView =null;

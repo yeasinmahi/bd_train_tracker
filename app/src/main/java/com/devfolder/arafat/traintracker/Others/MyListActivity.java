@@ -1,4 +1,4 @@
-package com.gits.arafat.traintracker.Others;
+package com.devfolder.arafat.traintracker.Others;
 
 import android.app.Activity;
 import android.app.ListActivity;

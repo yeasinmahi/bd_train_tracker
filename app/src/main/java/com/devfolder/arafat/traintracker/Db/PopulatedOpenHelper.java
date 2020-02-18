@@ -1,11 +1,11 @@
-package com.gits.arafat.traintracker.Db;
+package com.devfolder.arafat.traintracker.Db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.gits.arafat.traintracker.R;
+import com.devfolder.arafat.traintracker.R;
 
 import java.io.File;
 import java.io.FileOutputStream;

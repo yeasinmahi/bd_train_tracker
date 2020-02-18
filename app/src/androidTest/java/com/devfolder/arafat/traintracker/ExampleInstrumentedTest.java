@@ -1,4 +1,4 @@
-package com.gits.arafat.traintracker;
+package com.devfolder.arafat.traintracker;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.gits.arafat.traintracker", appContext.getPackageName());
+        assertEquals("com.devfolder.arafat.traintracker", appContext.getPackageName());
     }
 }

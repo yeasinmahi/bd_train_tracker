@@ -1,4 +1,4 @@
-package com.gits.arafat.traintracker.Others;
+package com.devfolder.arafat.traintracker.Others;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,10 +11,10 @@ import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-import com.gits.arafat.traintracker.Activity.SentSms;
-import com.gits.arafat.traintracker.Db.DbHelper;
-import com.gits.arafat.traintracker.Model.Train;
-import com.gits.arafat.traintracker.R;
+import com.devfolder.arafat.traintracker.Activity.SentSms;
+import com.devfolder.arafat.traintracker.Db.DbHelper;
+import com.devfolder.arafat.traintracker.Model.Train;
+import com.devfolder.arafat.traintracker.R;
 
 import java.util.List;
 import java.util.Map;
